@@ -7,8 +7,12 @@ import React, { Component } from 'react';
 
 class HelloWorld extends Component{
     render(){
+        var myStyle = {
+            fontSize: 100,
+            color: '#FF0000'
+        };
         return (
-            <h1>HelloWorld</h1>
+            <h1 style={myStyle}>HelloWorld</h1>
         )
     }
 }
