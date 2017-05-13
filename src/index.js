@@ -53,6 +53,11 @@ var WebLink = React.createClass({
  ＊当用户点击组件，导致状态变化，this.setState 方法就修改状态值，每次修改以后，自动调用 this.render 方法，再次渲染组件。
  */
 var LikeButton = React.createClass({
+    getDefaultProps:function () {
+        return {
+            name:'buzheng'
+        }
+    },
     getInitialState :function () {
         return{
             liked:false
@@ -64,9 +69,13 @@ var LikeButton = React.createClass({
     render:function () {
         var text = this.state.liked?'喜欢':'不喜欢';
         return (
-            <p onClick={this.handleClick}>
-                你<b>{text}</b>我。
-            </p>
+            <section>
+                <p>{this.props.name}</p>
+                <p onClick={this.handleClick}>
+                    你<b>{text}</b>我。
+                </p>
+            </section>
+
         )
     }
 });
